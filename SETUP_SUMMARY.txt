@@ -1,0 +1,162 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    Cherry SANITY CMS SETUP - COMPLETE                      ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+✅ DONE: Code Setup
+────────────────────────────────────────────────────────────────────────────
+  ✓ Created 5 Sanity schemas (Product, Review, Hero, Video, Settings)
+  ✓ Created 12 query functions (getProducts, getReviews, etc.)
+  ✓ Integrated Sanity client (next-sanity, @sanity/image-url)
+  ✓ Set up image optimization with urlFor()
+  ✓ Created comprehensive documentation
+
+📋 YOUR PROJECT ID
+────────────────────────────────────────────────────────────────────────────
+  vcf7cafd
+  
+  ✓ You have this! ✅
+
+❌ STILL NEEDED: 2 Keys from Sanity
+────────────────────────────────────────────────────────────────────────────
+  
+  1. DATASET NAME (usually: production)
+     Where: sanity.io → Your Project → Settings → API
+     Look for: "Datasets" section
+     
+  2. API TOKEN (create it now)
+     Where: sanity.io → Your Project → Settings → API
+     Click: "+ Add API token"
+     Name: Cherry-website
+     Permission: Editor
+     Copy: The token (starts with "sk...")
+
+🎯 DO THIS NOW (3 Steps)
+────────────────────────────────────────────────────────────────────────────
+
+STEP 1: Create .env.local file
+  
+  Location: Project root (same folder as package.json)
+  Content:
+  
+  NEXT_PUBLIC_SANITY_PROJECT_ID=vcf7cafd
+  NEXT_PUBLIC_SANITY_DATASET=production
+  SANITY_API_TOKEN=YOUR_TOKEN_HERE
+  
+  (Replace YOUR_TOKEN_HERE with your actual token from Sanity)
+
+STEP 2: Install dependencies
+  
+  Command:
+  pnpm install
+
+STEP 3: Start development server
+  
+  Command:
+  pnpm dev
+  
+  Visit:
+  http://localhost:3000
+
+🚀 WHEN EVERYTHING WORKS
+────────────────────────────────────────────────────────────────────────────
+  
+  • No red errors in browser console = Connected! ✅
+  • Go to your Sanity project
+  • Create Products, Reviews, Videos
+  • Changes appear on website instantly
+  • No code changes needed
+  • No rebuild/redeploy needed
+
+📖 HELP DOCUMENTS (in project root)
+────────────────────────────────────────────────────────────────────────────
+  
+  GET_YOUR_KEYS.md           → Step-by-step for getting keys
+  ENV_SETUP_TEMPLATE.txt     → Template for .env.local
+  YOUR_NEXT_STEPS.md         → Action plan
+  SANITY_README.md           → Overview
+  QUICK_START_SANITY.md      → 5-minute quick start
+  SANITY_SETUP.md            → Detailed setup guide
+  SANITY_CHECKLIST.md        → Verification steps
+
+📊 YOUR SANITY SCHEMAS READY
+────────────────────────────────────────────────────────────────────────────
+  
+  Product Schema
+  ├─ name, slug, emoji, price, category
+  ├─ description, fullDescription
+  ├─ image, gallery
+  ├─ featured, inStock
+  ├─ careInstructions
+  ├─ video (reference to Video schema)
+  └─ publishedAt
+  
+  Review Schema
+  ├─ name, rating, comment
+  ├─ avatar (image)
+  ├─ product (reference to Product)
+  ├─ verified
+  └─ publishedAt
+  
+  Hero Section Schema
+  ├─ title, subtitle, description
+  ├─ primaryCtaText, secondaryCtaText
+  ├─ primaryImage, secondaryImage, backgroundImage
+  └─ featuredProduct (reference to Product)
+  
+  Video Schema
+  ├─ title, description
+  ├─ videoUrl (external) OR videoFile (upload)
+  ├─ thumbnail, videoType
+  ├─ featured, duration
+  ├─ relatedProduct (reference to Product)
+  └─ publishedAt
+  
+  Settings Schema
+  ├─ siteName, siteDescription
+  ├─ logo, favicon
+  ├─ newsletterHeading, newsletterDescription
+  ├─ footerText
+  └─ socialLinks
+
+🔗 WHAT'S CONNECTED
+────────────────────────────────────────────────────────────────────────────
+  
+  ProductShowcase.tsx  → Fetches products from Sanity
+  ReviewSection.tsx    → Fetches reviews from Sanity
+  HeroSection.tsx      → Fetches hero content from Sanity
+  Footer.tsx           → Fetches settings from Sanity
+  All components       → Use urlFor() for image optimization
+
+✨ BONUS: Query Functions You Can Use
+────────────────────────────────────────────────────────────────────────────
+  
+  import { getProducts, getReviews, getHeroSection, etc. } 
+    from '@/lib/sanity.client'
+  
+  await getProducts()              // All products
+  await getProduct(slug)           // Single product by slug
+  await getFeaturedProducts(9)     // Featured products (limit 9)
+  
+  await getReviews(3)              // All reviews (limit 3)
+  await getProductReviews(id)      // Reviews for specific product
+  
+  await getHeroSection()           // Hero banner content
+  
+  await getVideos(10)              // All videos (limit 10)
+  await getFeaturedVideos(3)       // Featured videos (limit 3)
+  
+  await getSettings()              // Site settings
+  
+  urlFor(image).url()              // Get image URL with optimization
+
+🎉 YOU'RE ALL SET!
+────────────────────────────────────────────────────────────────────────────
+  
+  Everything is ready. Just get your API token and dataset from Sanity,
+  add them to .env.local, and you're live!
+  
+  Your Cherry app will pull all content from Sanity automatically.
+  
+  Questions? Read GET_YOUR_KEYS.md for detailed step-by-step!
+
+════════════════════════════════════════════════════════════════════════════

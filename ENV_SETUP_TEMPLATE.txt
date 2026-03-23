@@ -1,0 +1,112 @@
+================================================================================
+                    CREATE YOUR .env.local FILE
+================================================================================
+
+Location: Create this file in your project root (same folder as package.json)
+Filename: .env.local
+Type: Plain text file (no extension needed)
+
+================================================================================
+                        WHAT TO COPY & PASTE
+================================================================================
+
+Copy everything below (all 3 lines):
+
+---START COPY---
+
+NEXT_PUBLIC_SANITY_PROJECT_ID=vcf7cafd
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=
+
+---END COPY---
+
+================================================================================
+                            WHAT TO FILL IN
+================================================================================
+
+Line 1: NEXT_PUBLIC_SANITY_PROJECT_ID=vcf7cafd
+        ✅ DONE - Your project ID is: vcf7cafd
+        ❌ DO NOT CHANGE THIS
+
+Line 2: NEXT_PUBLIC_SANITY_DATASET=production
+        ? REPLACE "production" if your dataset has a different name
+        ? Check in Sanity: Settings → API → Look for "Datasets"
+        ✅ Usually it's "production", so you can leave it as is
+
+Line 3: SANITY_API_TOKEN=
+        ❌ YOU NEED TO ADD YOUR TOKEN HERE
+        ? Get it from: Sanity Settings → API → Tokens → Add API token
+        ? Name it: Cherry-website
+        ? Set to: Editor (full read/write access)
+        ? Copy the token and paste it after the = sign
+        ? Example: SANITY_API_TOKEN=skJf8K0p9mL3qR2xY5gH7kJ9w2aB4cD6eF8gH0i
+
+================================================================================
+                            COMPLETE EXAMPLE
+================================================================================
+
+Here's what your .env.local should look like when done:
+
+NEXT_PUBLIC_SANITY_PROJECT_ID=vcf7cafd
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=skJf8K0p9mL3qR2xY5gH7kJ9w2aB4cD6eF8gH0i
+
+================================================================================
+                              IMPORTANT NOTES
+================================================================================
+
+1. This file is LOCAL ONLY (not uploaded to GitHub)
+2. Never share your SANITY_API_TOKEN publicly
+3. Each person/computer needs their own .env.local
+4. After creating/editing, restart your dev server (Ctrl+C then pnpm dev)
+5. Changes are instant - no rebuild needed
+
+================================================================================
+                            QUICK CHECKLIST
+================================================================================
+
+[ ] Created .env.local in project root
+[ ] Added NEXT_PUBLIC_SANITY_PROJECT_ID=vcf7cafd
+[ ] Added NEXT_PUBLIC_SANITY_DATASET=production (or your dataset name)
+[ ] Added SANITY_API_TOKEN=sk... (your actual token from Sanity)
+[ ] Saved the file
+[ ] Restarted dev server (pnpm dev)
+[ ] Checked browser console for errors
+
+================================================================================
+                              NEXT COMMANDS
+================================================================================
+
+After creating .env.local, run:
+
+    pnpm install
+
+Then:
+
+    pnpm dev
+
+Then visit: http://localhost:3000
+
+If you see no red errors in the console = SUCCESS! ✅
+
+================================================================================
+                           GETTING YOUR TOKEN
+================================================================================
+
+1. Go to https://sanity.io and login
+2. Click on your project
+3. Click Settings (gear icon)
+4. Click API in the menu
+5. Scroll to "Tokens" section
+6. Click "+ Add API token"
+7. Name: Cherry-website
+8. Permission: Editor (allows read & write)
+9. Click Create
+10. COPY the token (it starts with "sk")
+11. Paste it in .env.local after SANITY_API_TOKEN=
+
+================================================================================
+
+Questions? Check GET_YOUR_KEYS.md for step-by-step instructions!
+
+Good luck! 🌿
