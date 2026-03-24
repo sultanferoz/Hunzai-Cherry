@@ -9,10 +9,18 @@ export default function Home() {
   return (
     <main className="background w-full h-full">
       <Header />
-      <HeroSection />
-      {/* <ProductShowcase /> */}
-      <BestOxygenSection />
-      <ReviewSection />
+      
+      <section id="home">
+        <HeroSection />
+      </section>
+
+      <section id="product">
+        <BestOxygenSection />
+      </section>
+
+      <section id="reviews">
+        <ReviewSection />
+      </section>
       <Footer />
     </main>
   );
