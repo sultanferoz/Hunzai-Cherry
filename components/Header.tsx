@@ -8,7 +8,7 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = -80; // header height offset
+      const yOffset = -80; 
       const y =
         el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
@@ -25,7 +25,6 @@ export default function Header() {
           <span>Hunzai Cherry</span>
         </div>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <button
             onClick={() => scrollToSection('home')}

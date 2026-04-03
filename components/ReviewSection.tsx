@@ -11,8 +11,6 @@ export default function ReviewSection() {
   useEffect(() => {
     async function fetchReviews() {
       const res = await getReviews(6);
-
-      // convert avatar object to URL
       const formatted = res.map((r) => ({
         ...r,
         avatar: r.avatar ? urlFor(r.avatar).url() : null,
@@ -37,8 +35,6 @@ export default function ReviewSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#3b090d]/40 to-[#120202]/50" />
       </div>
-
-      {/* Content */}
       <div className="container-Cherry relative z-10">
         <div className="text-center mb-6">
           <h2 className="text-5xl md:text-7xl font-extralight italic tracking-wide text-white font-serif">
@@ -48,8 +44,6 @@ export default function ReviewSection() {
             What our happy customers say about us
           </p>
         </div>
-
-        {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {reviews.length > 0 ? (
             reviews.map((review) => <ReviewCard key={review._id} {...review} />)
