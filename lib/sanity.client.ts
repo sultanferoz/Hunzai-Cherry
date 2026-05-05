@@ -1,7 +1,7 @@
 import { createClient } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'vcf7cafd';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 const apiVersion = '2024-01-01';
 
@@ -10,7 +10,7 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: process.env.NODE_ENV === 'production',
-  token: process.env.SANITY_API_TOKEN,
+  token: process.env.SANITY_API_TOKEN || 'skEA6W3YvR2NtoQoqFHlbXgZQmRoqvOq9wkCwCxOIVhmHDAiPYb0qLHQuyFWvm9y8e3wBMjyAISKidjeXsIk3qYOLwOP4Fm1JOl4VDtmiNerjSfvu2ERdZS1criD4zLmi9BGpo4GdiccW1drVZaDIF7YJQnEu7UnTSwN5JseMao6lClc9jt7',
 });
 
 const builder = imageUrlBuilder(client);
